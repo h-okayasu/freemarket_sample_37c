@@ -1,34 +1,25 @@
-- if @items != nil
-  %section.item-box
-    =link_to item_path(item.id) do
-      %figure.item-box__photo
-        .item-box-image
+%section.item-box
+  =link_to item_path(item.id) do
+    %figure.item-box__photo
+      .item-box-image
+        - if item.images.present?
           = image_tag item.images.first.image, size: "213x213"
           - if item.status == "trading" || item.status == "shipped"|| (item.status == "displayed" && item.buyer_id != nil)
             %figcaption
               .sold-badge-item.item-sold-out-badge.bold
                 .sold-badge SOLD
-      .item-box__text
-        %h3.item-box__text__name.font-2
-          = item.item_name
-        .item-box__text__num.clearfix
-          .item-box__text__num__price
-            = number_to_currency(item.price, unit: "¥",precision: 0)
-          .item-box__text__num__likes.font-2
-            %i{class: "far fa-heart heart-icon"}
-            %span 10
-          .item-box__text__num__tax  (税込)
-- else
-  %section.item-box
-    %figure.item-box__photo
-      .item-box-image
-      .item-box__text
-        %h3.item-box__text__name.font-2
-          出品された商品はありません
-        .item-box__text__num.clearfix
-          .item-box__text__num__price
-            = number_to_currency(0, unit: "¥",precision: 0)
-          .item-box__text__num__likes.font-2
-            %i{class: "far fa-heart heart-icon"}
-            %span 10
-          .item-box__text__num__tax  (税込)
+        -else
+          画像がありません。
+    .item-box__text
+      %h3.item-box__text__name.font-2
+        = item.item_name
+      .item-box__text__num.clearfix
+        .item-box__text__num__price ￥
+        .item-box__text__num__price
+          = number_to_currency(item.price, unit: "",precision: 0)
+        .item-box__text__num__likes.font-2
+          %i{class: "far fa-heart heart-icon"}
+          %span 10
+        .item-box__text__num__tax  (税込)
+
+

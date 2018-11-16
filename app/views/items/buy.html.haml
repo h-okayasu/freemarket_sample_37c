@@ -10,8 +10,9 @@
           %p.buy-content__name.bold
           = @item.item_name
           .buy-content__form
-            %p.buy-price.bold
-              = number_to_currency(@item.price, unit: "¥",precision: 0)
+            %span.buy-price.bold¥
+            %span.buy-price.bold
+              = number_to_currency(@item.price, unit:"", precision: 0)
               %span.item-shipping-fee 送料込み
             .buy-point
               ポイントを使う
@@ -20,8 +21,9 @@
               %ul.buy-you-pay.bold
                 %li.buy-price-cell 支払い金額
                 %li.buy-price-cell
+                  %span.data-buy-pay￥
                   %span.data-buy-pay
-                  = number_to_currency(@item.price, unit: "¥",precision: 0)
+                  = number_to_currency(@item.price, unit: "",precision: 0)
             - if (@user_detail.prefecture.present? && @user_detail.city.present? && @user_detail.address.present?)
               %p.has-error-text
                 購入にお進みください。

@@ -6,15 +6,17 @@
     .item-photo
       .owl-carousel
         .owl-slider
-          = image_tag @item.images.first.image, size: "300x300"
-          %figcaption
-            - if @item.status == "shipped" || @item.status == "trading" || @item.status == "received"
-              .item-sold-out-badge.bold.sold-badge-item
-                .sold-badge SOLD
+          - if @item.images.present?
+            = image_tag @item.images.first.image, size: "300x300"
+            %figcaption
+              - if @item.status == "shipped" || @item.status == "trading" || @item.status == "received"
+                .item-sold-out-badge.bold.sold-badge-item
+                  .sold-badge SOLD
         .owl-dots
-          .owl-dot
-            -@images.each do |image|
-              = image_tag image.image, size: "75x75", class: "owl"
+          - if @item.images.present?
+            .owl-dot
+              -@images.each do |image|
+                = image_tag image.image, size: "75x75", class: "owl"
     %table.item-detail-table
       %tbody
         %tr

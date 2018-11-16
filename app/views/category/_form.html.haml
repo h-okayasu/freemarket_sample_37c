@@ -2,7 +2,8 @@
   =link_to item_path(item.id) do
     %figure.item-box__photo
       .item-box-image
-        = image_tag item.images.first.image, size: "188x188"
+        - if item.images.present?
+          = image_tag item.images.first.image, size: "188x188"
     .item-box__text
       %h3.item-box__text__name.font-2
         = item.item_name

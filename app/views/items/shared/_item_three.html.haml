@@ -2,17 +2,19 @@
   =link_to item_path(item.id) do
     %figure.item-box__photo
       .item-box-image
-        = image_tag item.images.first.image, size: "213x213"
-        - if item.status == "trading" || item.status == "shipped"
-          %figcaption
-            .item-sold-out-badge.bold
-              .sold-badge SOLD
+        - if item.images.present?
+          = image_tag item.images.first.image, size: "213x213"
+          - if item.status == "trading" || item.status == "shipped"
+            %figcaption
+              .item-sold-out-badge.bold
+                .sold-badge SOLD
     .item-box__text
       %h3.item-box__text__name.font-2
         = item.item_name
       .item-box__text__num.clearfix
+        .item-box__text__num__price ￥
         .item-box__text__num__price
-          = number_to_currency(item.price, unit: "¥",precision: 0)
+          = number_to_currency(item.price, unit: "",precision: 0)
         .item-box__text__num__likes.font-2
           %i{class: "far fa-heart heart-icon"}
           %span 10

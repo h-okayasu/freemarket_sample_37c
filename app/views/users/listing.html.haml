@@ -20,8 +20,9 @@
               %li
                 .mypage-item-link
                   = link_to transaction_detail_path(item.id) do
-                    %figure
-                      = image_tag item.images.first.image, width: "48", height: "48", class: "clearfix"
+                    - if item.images.present?
+                      %figure
+                        = image_tag item.images.first.image, width: "48", height: "48", class: "clearfix"
                     .mypage-item-body
                       .mypage-item-text
                         = item.item_name
