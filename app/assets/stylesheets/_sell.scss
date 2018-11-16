@@ -45,7 +45,7 @@
             position: relative;
             @include tab() {
             width: 620px;
-            min-height: 184px;
+            min-height: 200px;
             padding: 40px;
             &__text{
               text-align: center;
@@ -181,3 +181,25 @@
     @include form();
     background-color: #fff;
   }
+
+#dropArea.dragover, #dropArea:active {
+  background-color: #9c9;
+  background: #cfc;
+  color: #9c9;
+}
+
+.sell-uploader-file{
+  display: inline-block;
+  border: 1px solid #eee;
+  vertical-align:top;
+  background-color: #f5f5f5;
+}
+
+.upload-img{
+  display: inline-block;
+  width: 100px;
+  margin-right: 5px;
+  .img_del {
+    font-size:14px;
+  }
+}

@@ -11,16 +11,23 @@
                 出品画像
                 %span.form-require  必須
               %p  最大4枚までアップロードできます
-              -# =render partial: "sell_img", locals: {image: @image}
               .sell-dropbox.clearfix
-                .upload-dropbox
+                .upload-dropbox#dropArea
                   .upload-dropbox__text
-                    ドラッグアンドドロップ
-                    %br またはクリックしてファイルをアップロード
-                    = f.fields_for :images do |i|
-                      = i.label :image, "出品画像" do
-
-                        = i.file_field :image
+                    -# ドラッグアンドドロップ
+                    %br クリックしてファイルをアップロード
+                    .upload-img
+                      = f.fields_for :images do |i|
+                        = i.file_field :image, id: "fileInput", class: "file"
+                    .upload-img
+                      = f.fields_for :images do |i|
+                        = i.file_field :image, id: "fileInput", class: "file"
+                    .upload-img
+                      = f.fields_for :images do |i|
+                        = i.file_field :image, id: "fileInput", class: "file"
+                    .upload-img
+                      = f.fields_for :images do |i|
+                        = i.file_field :image, id: "fileInput", class: "file"
         .sell-content
           .form-group
             %label

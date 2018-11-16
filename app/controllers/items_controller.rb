@@ -1,6 +1,5 @@
 class ItemsController < ApplicationController
-
-PICTURE_COUNT = 4
+  PICTURE_COUNT = 4
   before_action :set_item ,only:[:payjp,:destroy,:show,:edit,:update,:stop,:resume,:buy]
   def payjp
     require 'payjp'
@@ -32,7 +31,7 @@ PICTURE_COUNT = 4
   def new
     if user_signed_in?
       @item = Item.new
-      PICTURE_COUNT.times{@item.images.build}
+      @item.images.build
     else
       redirect_to new_current_user_session_path
     end
