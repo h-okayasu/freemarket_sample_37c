@@ -16,18 +16,22 @@
                   .upload-dropbox__text
                     -# ドラッグアンドドロップ
                     %br クリックしてファイルをアップロード
-                    .upload-img
+                    %label.upload-img
                       = f.fields_for :images do |i|
-                        = i.file_field :image, id: "fileInput", class: "file"
-                    .upload-img
+                        = i.file_field :image, id: "fileInput", class: "file", style: "display:none"
+                        写真を選択
+                    %label.upload-img
                       = f.fields_for :images do |i|
-                        = i.file_field :image, id: "fileInput", class: "file"
-                    .upload-img
+                        = i.file_field :image, id: "fileInput", class: "file", style: "display:none"
+                        写真を選択
+                    %label.upload-img
                       = f.fields_for :images do |i|
-                        = i.file_field :image, id: "fileInput", class: "file"
-                    .upload-img
+                        = i.file_field :image, id: "fileInput", class: "file", style: "display:none"
+                        写真を選択
+                    %label.upload-img
                       = f.fields_for :images do |i|
-                        = i.file_field :image, id: "fileInput", class: "file"
+                        = i.file_field :image, id: "fileInput", class: "file", style: "display:none"
+                        写真を選択
         .sell-content
           .form-group
             %label

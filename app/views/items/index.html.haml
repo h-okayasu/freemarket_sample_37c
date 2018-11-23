@@ -23,21 +23,21 @@
       %h2.pickup-head.bold  ピックアップカテゴリー
       %section.item-box-container.clearfix
         %h3.sub-title.bold
-          =link_to "/category/large_category/1", class: "view-all-link" do
+          .view-all-link
             ピックアップアイテム
         .items-box-content.clearfix
           =render partial: "items/items", collection: @items, as: "item"
         .view-all
-          =link_to "/category/large_category/1", class: "view-all-link" do
+          .view-all-link
             すべての商品を見る
       %section.item-box-container.clearfix
         %h3.sub-title.bold
-          =link_to "/category/large_category/1", class: "view-all-link" do
+          =link_to large_category_index_path(large_category_id: 1), class: "view-all-link" do
             レディース新着アイテム
         .items-box-content.clearfix
           =render partial: "items/items", collection: @ladies_items, as: "item"
         .view-all
-          =link_to "/category/large_category/1", class: "view-all-link" do
+          =link_to large_category_index_path(large_category_id: 1), class: "view-all-link" do
             すべての商品を見る
   = render partial: 'users/footer_sell_btn'
   =render "items/shared/footer"

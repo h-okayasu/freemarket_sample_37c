@@ -45,13 +45,21 @@
             position: relative;
             @include tab() {
             width: 620px;
-            min-height: 200px;
+            min-height: 250px;
             padding: 40px;
             &__text{
               text-align: center;
               @include box-height();
               right: 16px;
               left: 16px;
+              label{
+                color: white;
+                background-color: #668ad8;
+                border-bottom: solid 5px #36528c;
+                border-right: solid 5px #5375bd;
+                padding: 5px;
+                border-radius: 8px;
+              }
             }
           }
         }
@@ -197,9 +205,13 @@
 
 .upload-img{
   display: inline-block;
-  width: 100px;
+  width: 120px;
   margin-right: 5px;
   .img_del {
     font-size:14px;
+    color: white;
+  }
+  img{
+    width: 100px;
   }
 }

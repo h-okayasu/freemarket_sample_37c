@@ -37,13 +37,13 @@
         %tr
           %th カテゴリー
           %td
-            =link_to "/category/large_category/#{@item.large_category_id}" do
+            =link_to large_category_path(large_category_id: @item.large_category_id) do
               = @item.large_category.large_category
-            =link_to "/category/medium_category/#{@item.large_category_id}/#{@item.medium_category_id}" do
+            =link_to large_category_medium_category_path(large_category_id: @item.large_category_id,medium_category_id: @item.medium_category_id) do
               .item-detail-table-sub-category
                 =fa_icon 'angle-right', class: "icon-arrow-right"
                 = @item.medium_category.medium_category
-            =link_to "/category/small_category/#{@item.large_category_id}/#{@item.medium_category_id}/#{@item.small_category_id}" do
+            =link_to large_category_medium_category_small_category_path(large_category_id: @item.large_category_id,medium_category_id: @item.medium_category_id,small_category_id:@item.small_category_id) do
               .item-detail-table-sub-sub-category
                 =fa_icon 'angle-right', class: "icon-arrow-right"
                 = @item.small_category.small_category
@@ -82,8 +82,9 @@
           %td
             = @item.handling_time
   .item-price-box
+    %span.item-price.bold ¥
     %span.item-price.bold
-      = number_to_currency(@item.price, unit: "¥",precision: 0)
+      = number_to_currency(@item.price, unit:"", precision: 0)
     %span.item.tax  (税込)
     %span.item-shipping-fee 送料込み
   - if @item.buyer_id == current_user.id && @item.status == "trading"

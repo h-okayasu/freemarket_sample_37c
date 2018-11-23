@@ -31,7 +31,7 @@ Rails.application.routes.draw do
 
   resources :blands, only: [:index]
 
-  resources :large_category, only: [:show] do
+  resources :large_category, only: [:show, :index] do
     resources :medium_category, only: [:show] do
       resources :small_category, only: [:show]
     end

@@ -13,8 +13,25 @@
           %li.item-menue__list
             = link_to category_index_path, class: "user-menue__list__content link" do
               .text カテゴリーから探す
+            = render '/items/shared/dropdown_category'
           %li.item-menue__list
-            %a.link ブランドから探す
+            %a.link.user-menue__list__content ブランドから探す
+            %ul.dropdown_category
+              %li.dropdown_category__list
+                %h3
+                  %a ルイ ヴィトン
+              %li
+                %h3
+                  %a ナイキ
+              %li
+                %h3
+                  %a アディダス
+              %li
+                %h3
+                  %a リーバイス
+              %li
+                %h3
+                  %a その他のブランド
       %nav.menue-right
         %ul.login-nav
           %li

@@ -1,0 +1,13 @@
+= render partial: 'items/shared/header'
+%main.item-box-list.clearfix
+  .item-content
+    %ul.parts-nav.clearfix
+      - @medium_category_items.each do |mcategory|
+        %li
+          %a.l-category-n
+            = mcategory.medium_category
+    %section.item-box-content.clearfix
+      %h1.items-box-head.clearfix.bold= "#{@items.first.large_category.large_category}の商品一覧"
+      = render partial: '/category/form', collection: @items, as: "item"
+  = render partial: 'users/footer_sell_btn'
+=render "items/shared/footer"

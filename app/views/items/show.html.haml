@@ -18,23 +18,11 @@
               - elsif @item.status == "stopped"
                 .item-sold-out-badge.bold.stop-badge-item
                   .stop-badge 公開停止中
-            -# .owlSet
-            -#   .owl-stage-outer slide1
-            -#   .owl-stage-outer slide2
-            -#   .owl-stage-outer slide3
-            -#   .owl-stage-outer slide4
-            -# %img{src: "https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m72872829960_1.jpg?1540973038", class: "owl-lazy", width: "300"}
-          -# %button.slider-next 次へ
         .owl-dots
           .owl-dot
             - if @item.images.present?
               -@images.each do |image|
                 = image_tag image.image, size: "75x75", class: "owl"
-            -#   %img{src: "https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m72872829960_1.jpg?1540973038", class: "owl-lazy", width: "75"}
-            -# .owl-dot
-            -#   %img{src: "https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m72872829960_1.jpg?1540973038", class: "owl-lazy", width: "75"}
-            -# .owl-dot
-            -#   %img{src: "https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m72872829960_1.jpg?1540973038", class: "owl-lazy", width: "75"}
     %table.item-detail-table
       %tbody
         %tr
